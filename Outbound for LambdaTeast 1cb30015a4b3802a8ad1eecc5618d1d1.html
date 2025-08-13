@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Outbound for LambdaTeast</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1cb30015-a4b3-802a-8ad1-eecc5618d1d1" class="page sans"><header><img class="page-cover-image" src="Lambda-Test-lifetime-deal-Online-Cross-browser-testing-tool-1280x888.jpeg" style="object-position:center 54.49999999999999%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="logo.png"/></div><h1 class="page-title">Outbound for LambdaTeast</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h2 id="23e30015-a4b3-8073-9e48-d2496e4b70e5" class="">Problem Statement</h2><p id="23e30015-a4b3-802e-98f8-fc0a64f6b0af" class="">LambdaTest is a cloud-based platform that provides automated testing and debugging services for web applications. The problem it addresses is the need for efficient and scalable testing solutions to ensure the quality and reliability of web applications. This is particularly crucial in today&#x27;s fast-paced digital landscape where applications are constantly evolving and need to be tested thoroughly to prevent errors and downtime.</p><p id="23e30015-a4b3-80f3-869d-fba6c6c64aaf" class="">
+</p><p id="23e30015-a4b3-802c-bc6c-e2676b5a2af2" class="">
+</p><hr id="23e30015-a4b3-808b-89ab-d8c3a2f2246f"/><h2 id="23e30015-a4b3-8003-86b6-f5171db4fb26" class="">Solutioning</h2><p id="23e30015-a4b3-8058-9a85-c60193b495fa" class="">The platform provides a range of features, including:</p><ol type="1" id="23e30015-a4b3-802b-a948-f9494f320f91" class="numbered-list" start="1"><li><strong>Cross-Browser Testing</strong>: LambdaTest supports testing on multiple browsers and devices, ensuring that applications are compatible across different platforms.</li></ol><ol type="1" id="23e30015-a4b3-80e5-af8e-d28e2afd9dae" class="numbered-list" start="2"><li><strong>Automated Testing</strong>: The platform offers automated testing capabilities, enabling users to run tests quickly and efficiently.</li></ol><ol type="1" id="23e30015-a4b3-8003-9693-f4b797d0b9c0" class="numbered-list" start="3"><li><strong>Real-Time Feedback</strong>: LambdaTest provides real-time feedback on test results, allowing users to identify and fix issues promptly.</li></ol><ol type="1" id="23e30015-a4b3-80bc-9f72-f9e28b6b8f8a" class="numbered-list" start="4"><li><strong>Collaboration Tools</strong>: The platform includes collaboration tools, enabling teams to work together on testing and debugging tasks.</li></ol><p id="23e30015-a4b3-8009-b14a-da0de0976337" class="">
+</p><p id="23e30015-a4b3-8034-a3e5-c3f0409d9aad" class="">
+</p><p id="23e30015-a4b3-80b4-ae5a-c1545cf322f6" class="">
+</p><hr id="23e30015-a4b3-8078-b485-c1b3b613869d"/><h2 id="23e30015-a4b3-807c-9245-cbd2a1beda88" class="">Competitor Landscape</h2><p id="23e30015-a4b3-805f-a14f-cdd6cbc45478" class="">The cloud-based automated testing and debugging platform market is highly competitive, with several key players vying for market share. The major competitors in this space include:</p><ol type="1" id="23e30015-a4b3-80de-b220-da82003da5b2" class="numbered-list" start="1"><li><strong>BrowserStack</strong>: One of the leading players in the market, BrowserStack offers a comprehensive cloud-based platform for cross-browser and cross-device testing. The company has a strong presence globally and is trusted by many enterprises.</li></ol><ol type="1" id="23e30015-a4b3-8025-933a-df7b5683fb8d" class="numbered-list" start="2"><li><strong>Sauce Labs</strong>: A prominent player in the cloud-based testing market, Sauce Labs provides a wide range of testing capabilities, including web and mobile app testing, API testing, and visual testing.</li></ol><ol type="1" id="23e30015-a4b3-8051-a59c-f257159d17b5" class="numbered-list" start="3"><li><strong>Perfecto</strong>: Owned by Perforce Software, Perfecto is a cloud-based platform that enables automated testing of web and mobile applications across a wide range of devices and browsers.</li></ol><ol type="1" id="23e30015-a4b3-80c8-9f5e-d6aa84fbf76f" class="numbered-list" start="4"><li><strong>TestingBot</strong>: A cloud-based platform that offers a large selection of browsers and devices for cross-browser and cross-device testing, TestingBot is a popular choice among developers and QA teams.</li></ol><ol type="1" id="23e30015-a4b3-80e6-8cd9-e71ecad833d6" class="numbered-list" start="5"><li><strong>Zebrunner</strong>: An advanced cloud-based testing platform that provides features like test case management, AI-powered test analysis, and seamless integration with various development tools.</li></ol><ol type="1" id="23e30015-a4b3-8037-8fce-d240850e1968" class="numbered-list" start="6"><li><strong>Testomat.io</strong>: A cloud-based automated testing system designed to help businesses manage their automated tests with an easy-to-use interface.</li></ol><p id="23e30015-a4b3-80f9-83f7-ed2f1cb490f8" class="">
+</p><p id="23e30015-a4b3-80d1-a727-ca9e75e6980f" class="">
+</p><hr id="23e30015-a4b3-8095-bd75-d2fdc157419b"/><h2 id="23e30015-a4b3-80bb-aca2-eca93feba372" class="">Value Propositions </h2><p id="23e30015-a4b3-80b9-afaf-d7d93fef316d" class="">LambdaTest offers a comprehensive cloud-based testing platform that addresses these pain points by providing:</p><ol type="1" id="23e30015-a4b3-80d1-9c04-f55595c3dcd9" class="numbered-list" start="1"><li><strong>Efficient Testing</strong>: Automated testing and debugging capabilities to reduce testing time and improve accuracy.</li></ol><ol type="1" id="23e30015-a4b3-806b-b6e0-fa5b0a9be239" class="numbered-list" start="2"><li><strong>Wide Device and Browser Support</strong>: Access to a large pool of real devices and browsers for comprehensive cross-browser and cross-device testing.</li></ol><ol type="1" id="23e30015-a4b3-80a9-af43-d4e38deb7d5c" class="numbered-list" start="3"><li><strong>Cost-Effective</strong>: Cloud-based infrastructure eliminates the need for in-house maintenance and reduces costs.</li></ol><ol type="1" id="23e30015-a4b3-808c-9dc1-ea049150ee1e" class="numbered-list" start="4"><li><strong>Enhanced Visibility and Insights</strong>: Real-time feedback and detailed analytics to provide actionable insights for data-driven decision-making.</li></ol><p id="23e30015-a4b3-8095-ade5-f4b144ce064e" class="">
+</p><p id="23e30015-a4b3-80fa-adf9-d5e28c7aa91c" class="">
+</p><hr id="23e30015-a4b3-8012-ad24-ec4e5471109f"/><h2 id="23e30015-a4b3-807a-baf1-ec602fdb6c78" class="">Define your positioning </h2><p id="23e30015-a4b3-8074-823e-d2e7aa558fc2" class="">LambdaTest positions itself in the market with the following key differentiators compared to its competitors:</p><ol type="1" id="23e30015-a4b3-803b-ace1-d58a2e554e76" class="numbered-list" start="1"><li><strong>Extensive Browser and Device Coverage</strong>:<ul id="23e30015-a4b3-80e7-b0a2-e601e7d62ee2" class="bulleted-list"><li style="list-style-type:disc">LambdaTest supports testing across over 3,000 real browsers, operating systems, and device combinations.</li></ul><ul id="23e30015-a4b3-806c-a19f-d2deca22e1eb" class="bulleted-list"><li style="list-style-type:disc">This wide coverage ensures comprehensive cross-browser and cross-device testing, reducing the risk of compatibility issues.</li></ul></li></ol><ol type="1" id="23e30015-a4b3-80f7-abf2-d961dcba3b74" class="numbered-list" start="2"><li><strong>Affordable Pricing</strong>:<ul id="23e30015-a4b3-80e6-af79-f07f34c76acd" class="bulleted-list"><li style="list-style-type:disc">LambdaTest&#x27;s pricing is positioned as competitive and affordable compared to competitors like BrowserStack and Sauce Labs.</li></ul><ul id="23e30015-a4b3-809a-ab78-e1d2e5dfbab0" class="bulleted-list"><li style="list-style-type:disc">The platform offers a range of pricing plans to cater to businesses of different sizes and budgets.</li></ul></li></ol><ol type="1" id="23e30015-a4b3-80fa-ad17-e7944b5358e0" class="numbered-list" start="3"><li><strong>Intuitive User Interface</strong>:<ul id="23e30015-a4b3-8033-b508-ebdaf7c00720" class="bulleted-list"><li style="list-style-type:disc">LambdaTest is praised for its user-friendly and intuitive interface, making it easy for users to navigate and use the platform.</li></ul></li></ol><ol type="1" id="23e30015-a4b3-8012-9a59-ed8f724730e1" class="numbered-list" start="4"><li><strong>Comprehensive Integration Capabilities</strong>:<ul id="23e30015-a4b3-80c4-859b-dd3e20e7083f" class="bulleted-list"><li style="list-style-type:disc">LambdaTest offers seamless integration with a wide range of project management, bug tracking, and CI/CD tools.</li></ul><ul id="23e30015-a4b3-80d6-b4d5-ff9dea823768" class="bulleted-list"><li style="list-style-type:disc">This allows users to streamline their testing workflows and collaborate more effectively with their teams.</li></ul></li></ol><ol type="1" id="23e30015-a4b3-805e-9eac-d16a634d1b70" class="numbered-list" start="5"><li><strong>Real-Time Debugging and Feedback</strong>:<ul id="23e30015-a4b3-8011-b020-f61dcc012f99" class="bulleted-list"><li style="list-style-type:disc">LambdaTest provides real-time debugging and feedback, enabling users to quickly identify and fix issues.</li></ul><ul id="23e30015-a4b3-80b0-9e87-ed963718a1df" class="bulleted-list"><li style="list-style-type:disc">The platform&#x27;s screenshot and video recording capabilities help users capture and review test results in detail.</li></ul></li></ol><ol type="1" id="23e30015-a4b3-8038-a47f-f88d30dffb49" class="numbered-list" start="6"><li><strong>Scalable and Reliable Infrastructure</strong>:<ul id="23e30015-a4b3-8089-a4b1-c7fbea8441e2" class="bulleted-list"><li style="list-style-type:disc">LambdaTest&#x27;s cloud-based infrastructure is designed to be scalable and reliable, ensuring efficient and uninterrupted test execution.</li></ul><ul id="23e30015-a4b3-8024-b4d1-de334a45741d" class="bulleted-list"><li style="list-style-type:disc">The platform&#x27;s distributed architecture allows for parallel testing, reducing test execution times and improving overall efficiency.</li></ul></li></ol><p id="23e30015-a4b3-80a5-8891-d0ba6c489ba2" class="">
+</p><p id="23e30015-a4b3-8051-88d5-e2f6a9dba9e4" class="">
+</p><p id="23e30015-a4b3-80f8-a6a0-d6e353a297b0" class="">
+</p><p id="23e30015-a4b3-80c3-a369-da62a4f15997" class="">
+</p><hr id="23e30015-a4b3-8062-8364-fbc5ed451b81"/><h2 id="23e30015-a4b3-8032-8f60-ea60ee28eb16" class="">Defining ICP</h2><h2 id="23e30015-a4b3-80ab-b6ab-c88806147879" class=""><strong>ICP (Ideal Customer Profile)</strong></h2><h2 id="23e30015-a4b3-807e-a635-f253d350cc49" class=""><strong>Role</strong></h2><ul id="23e30015-a4b3-8005-89b0-c67ec6da9c4d" class="bulleted-list"><li style="list-style-type:disc">The primary target user for LambdaTest is the QA/Testing team, including roles like QA Engineers, Test Automation Engineers, and Software Testers.</li></ul><h2 id="23e30015-a4b3-80a6-b861-da737df62177" class=""><strong>Company Size</strong></h2><ul id="23e30015-a4b3-8037-99d5-e73fbbb55e67" class="bulleted-list"><li style="list-style-type:disc">LambdaTest caters to businesses of all sizes, from small and medium-sized enterprises to large enterprises.</li></ul><h2 id="23e30015-a4b3-8046-9595-f31848b33e79" class=""><strong>Industry</strong></h2><ul id="23e30015-a4b3-8091-ad3d-d576613a0bdf" class="bulleted-list"><li style="list-style-type:disc">LambdaTest&#x27;s platform is applicable across various industries that have a need for comprehensive web and mobile application testing, such as:<ul id="23e30015-a4b3-804e-9aae-cc584fad7d9e" class="bulleted-list"><li style="list-style-type:circle">Technology</li></ul><ul id="23e30015-a4b3-80c4-89d7-e34176955376" class="bulleted-list"><li style="list-style-type:circle">E-commerce</li></ul><ul id="23e30015-a4b3-80fa-8f36-cfd4663b3176" class="bulleted-list"><li style="list-style-type:circle">Finance</li></ul><ul id="23e30015-a4b3-8054-9903-f80fb3c268c7" class="bulleted-list"><li style="list-style-type:circle">Healthcare</li></ul><ul id="23e30015-a4b3-8059-b6fc-c8afad15343d" class="bulleted-list"><li style="list-style-type:circle">Retail</li></ul><ul id="23e30015-a4b3-8020-b69d-fc59f2d2b0ff" class="bulleted-list"><li style="list-style-type:circle">Media and Entertainment</li></ul></li></ul><h2 id="23e30015-a4b3-8097-87c9-fc4189522f38" class=""><strong>Pain Points</strong></h2><ul id="23e30015-a4b3-8030-859c-eef0426cea7d" class="bulleted-list"><li style="list-style-type:disc">Inefficient manual testing processes</li></ul><ul id="23e30015-a4b3-802d-b795-c4e735402e50" class="bulleted-list"><li style="list-style-type:disc">Limited device and browser coverage for testing</li></ul><ul id="23e30015-a4b3-804c-9889-d8c033b4efec" class="bulleted-list"><li style="list-style-type:disc">High maintenance costs for in-house testing infrastructure</li></ul><ul id="23e30015-a4b3-8003-902f-f810388a1d53" class="bulleted-list"><li style="list-style-type:disc">Lack of visibility and insights into testing performance</li></ul><h2 id="23e30015-a4b3-80f5-83eb-fe7884d2f2b1" class=""><strong>Challenges</strong></h2><ul id="23e30015-a4b3-80f4-8e70-e6bd36fd409a" class="bulleted-list"><li style="list-style-type:disc">Ensuring consistent application performance across a wide range of devices and browsers</li></ul><ul id="23e30015-a4b3-80c3-8f8c-d31cac516600" class="bulleted-list"><li style="list-style-type:disc">Accelerating release cycles without compromising quality</li></ul><ul id="23e30015-a4b3-8092-97f0-f60debf9c590" class="bulleted-list"><li style="list-style-type:disc">Integrating testing seamlessly into the development workflow</li></ul><ul id="23e30015-a4b3-8086-a37a-ca7d607718dd" class="bulleted-list"><li style="list-style-type:disc">Reducing the time and effort required for testing and debugging</li></ul><h2 id="23e30015-a4b3-803c-a23d-fdacfba58846" class=""><strong>Goals</strong></h2><ul id="23e30015-a4b3-808e-81a6-d4aa46c7d1c6" class="bulleted-list"><li style="list-style-type:disc">Deliver high-quality web and mobile applications to end-users</li></ul><ul id="23e30015-a4b3-8055-8d1a-fff2dbbff2b2" class="bulleted-list"><li style="list-style-type:disc">Improve testing efficiency and reduce time-to-market</li></ul><ul id="23e30015-a4b3-80d8-8899-e2bd189ccc8d" class="bulleted-list"><li style="list-style-type:disc">Reduce the overall cost of testing and maintenance</li></ul><ul id="23e30015-a4b3-80b5-9b8e-c627cb941cad" class="bulleted-list"><li style="list-style-type:disc">Gain better visibility and insights into the testing process</li></ul><h2 id="23e30015-a4b3-8099-ad01-d55e7160fdc2" class=""><strong>Decision-Making Process</strong></h2><ul id="23e30015-a4b3-8048-b528-c54ac47262c4" class="bulleted-list"><li style="list-style-type:disc">The decision to adopt LambdaTest is typically influenced by the QA/Testing team, with buy-in from engineering leadership and IT/DevOps teams.</li></ul><ul id="23e30015-a4b3-8015-8b36-d20a107f9931" class="bulleted-list"><li style="list-style-type:disc">Key stakeholders involved in the decision-making process include:<ul id="23e30015-a4b3-805a-bc8a-df482d51d533" class="bulleted-list"><li style="list-style-type:circle">QA Managers</li></ul><ul id="23e30015-a4b3-8066-ad90-c651f7620871" class="bulleted-list"><li style="list-style-type:circle">CIOs/CTOs</li></ul><ul id="23e30015-a4b3-80d3-bc9c-d5f7cb0c8f0a" class="bulleted-list"><li style="list-style-type:circle">Software Test Engineer</li></ul><ul id="23e30015-a4b3-80c5-b8ea-f0dfd51307ab" class="bulleted-list"><li style="list-style-type:circle">Product Manager</li></ul><ul id="23e30015-a4b3-801b-92c4-c4929d4f058d" class="bulleted-list"><li style="list-style-type:circle">Software Engineer</li></ul><ul id="23e30015-a4b3-8091-9f1a-fb363b985b04" class="bulleted-list"><li style="list-style-type:circle">Software Tester</li></ul><ul id="23e30015-a4b3-8056-b441-dc6bb869b8ac" class="bulleted-list"><li style="list-style-type:circle">Quality Assurance Tester</li></ul><ul id="23e30015-a4b3-80ac-bdee-eaca3039d07c" class="bulleted-list"><li style="list-style-type:circle">Head of Software Engineering</li></ul><ul id="23e30015-a4b3-80f7-96ea-d03c964a46d2" class="bulleted-list"><li style="list-style-type:circle">Chief Software Engineer</li></ul><ul id="23e30015-a4b3-80c6-b107-c820bd8d5daa" class="bulleted-list"><li style="list-style-type:circle">Lead Test Engineer</li></ul></li></ul><p id="23e30015-a4b3-806c-b5fe-f844ddf206a9" class="">
+</p><hr id="23e30015-a4b3-80cc-8c3a-fa162d0d0561"/><h2 id="23e30015-a4b3-80a6-96af-d036371b3054" class=""><strong>Ideal consumer persona</strong></h2><table id="23e30015-a4b3-80ea-9134-c93d629b4cfe" class="simple-table"><thead class="simple-table-header"><tr id="23e30015-a4b3-8178-9439-ced478c82011"><th id="?Dn=" class="simple-table-header-color simple-table-header" style="width:200px">Persona position</th><th id="@`;b" class="simple-table-header-color simple-table-header" style="width:106px">Age</th><th id=";cQ]" class="simple-table-header-color simple-table-header" style="width:200px">Role priorities</th><th id="x{:a" class="simple-table-header-color simple-table-header" style="width:224px">Role in buying process</th><th id="\zzI" class="simple-table-header-color simple-table-header" style="width:200px">Reporting structure</th><th id="tLWW" class="simple-table-header-color simple-table-header" style="width:200px">Preferred channels</th><th id="pSQ?" class="simple-table-header-color simple-table-header" style="width:200px">Pain points?</th><th id="eD_D" class="simple-table-header-color simple-table-header" style="width:200px">Current solution?</th></tr></thead><tbody><tr id="23e30015-a4b3-81d6-949d-fbb5d8d35f2c"><td id="?Dn=" class="" style="width:200px">QA Managers</td><td id="@`;b" class="" style="width:106px">25-40</td><td id=";cQ]" class="" style="width:200px">Improve QA and testing processes</td><td id="x{:a" class="" style="width:224px">Introduction to the upper management</td><td id="\zzI" class="" style="width:200px">QA Managers &lt; Engineering Managers &lt; CTOs</td><td id="tLWW" class="" style="width:200px">Cold Calls - Emails - LinkedIn</td><td id="pSQ?" class="" style="width:200px">Test time, range of testing, real-time test analytics, integrations with tech stack</td><td id="eD_D" class="" style="width:200px">Either a LambdaTest competitor or long, straining, manual processes.</td></tr></tbody></table><p id="23e30015-a4b3-8063-aa9e-e5922b3def57" class="">
+</p><hr id="23e30015-a4b3-8013-acb3-e56d78ab67ee"/><h2 id="23e30015-a4b3-8027-9831-e6df6ca7248d" class="">Email Sales Cadence</h2><ul id="23e30015-a4b3-808a-8921-c73773aca627" class="toggle"><li><details open=""><summary>Primary Email 1</summary><p id="23e30015-a4b3-802d-8e07-e4c86f667df2" class="">Subject : 3 things that all QAs are saying</p><p id="23e30015-a4b3-8083-b9d3-cfdaa3138c7a" class="">Testing time. Cross-browser compatibility. Seamless integrations.</p><p id="23e30015-a4b3-807f-a10b-dce6519c4836" class="">
+</p><p id="23e30015-a4b3-8087-947f-de753b2aaf54" class="">X, your ideal workday is spent sweating on this. Spending my day with people from QA and testing, I can tell you this requires a deodrant.</p><p id="23e30015-a4b3-80bf-bc45-d74af1dff1bc" class="">
+</p><p id="23e30015-a4b3-800b-bfd0-c63be43e55fc" class="">Add on the frustration of ensuring your apps work seamlessly across a wide range of browsers and devices, doubled with the time and effort required to maintain an in-house testing infrastructure can be a real headache.</p><p id="23e30015-a4b3-8001-afc3-e3cea9baeb28" class="">
+</p><p id="23e30015-a4b3-80bc-958b-d53b0fd4c53e" class="">Imagine a tool that not only reduces testing time by 50%, provides testing across 3000 browsers, which integrates directly into you workflow.</p><p id="23e30015-a4b3-802e-83bb-c557ffcde908" class="">
+</p><p id="23e30015-a4b3-8036-aeff-fd823138fd76" class="">Relevant enough to explore more?</p><p id="23e30015-a4b3-8073-9225-e8d045c6ffa6" class="">
+</p><p id="23e30015-a4b3-8063-aa43-fc6f85f6fb88" class="">
+</p><p id="23e30015-a4b3-800c-a06e-e0bd342496fb" class="">
+</p></details></li></ul><ul id="23e30015-a4b3-8062-a395-f6c496f92a6e" class="toggle"><li><details open=""><summary>Follow Up Email 1</summary><p id="23e30015-a4b3-809a-9c52-ea585968b481" class="">Some recommendations I have for you, X.</p><p id="23e30015-a4b3-8090-bea5-da9606f27b49" class="">
+</p><p id="23e30015-a4b3-80ba-a82e-efc8ab54b456" class="">For a renowned brand, BrowserStack.</p><p id="23e30015-a4b3-80af-9918-d83cef0d1e85" class="">For advanced reporting and analytics, Sauce Labs.</p><p id="23e30015-a4b3-8031-8340-e29646508f8a" class="">For AI/ML-powered test analysis, Zebrunner.</p><p id="23e30015-a4b3-8037-abf6-dd23640302e0" class="">For no-code test management, Testsigma.</p><p id="23e30015-a4b3-809b-9dd9-e41c54ad5a03" class="">
+</p><p id="23e30015-a4b3-80d5-8084-fdc828e2d66a" class="">These are some of the major solutions in the market specializing in a single issue.</p><p id="23e30015-a4b3-80c9-8d09-e97e00604ca6" class="">
+</p><p id="23e30015-a4b3-8069-a680-f58fadfd3160" class="">But, if the whole testing infrastructure might need attention, then there are better priced solutions which cover all of the above used by the likes of Amazon and Microsoft.</p><p id="23e30015-a4b3-8072-bf54-f2f11b3c78c2" class="">
+</p><p id="23e30015-a4b3-800b-ab4d-e4c88d6e4241" class="">Curious? Let’s chat. I promise, no pitching allowed.</p><p id="23e30015-a4b3-8096-8d6a-e972517e0451" class="">
+</p></details></li></ul><ul id="23e30015-a4b3-80f6-b5e6-c22e3f1454fb" class="toggle"><li><details open=""><summary>Follow Up Email 2</summary><figure id="23e30015-a4b3-80de-9df0-c203b759d6c8" class="image"><a href="Untitled.png"><img style="width:695px" src="Untitled.png"/></a></figure><p id="23e30015-a4b3-803e-bcd9-ca75f991dfc2" class="">X, I need to give you your cycle(solution). </p><p id="23e30015-a4b3-8042-ac06-db00f19c42af" class="">
+</p><p id="23e30015-a4b3-8081-9dc5-d994e7dc4466" class="">Please stop and turn around. I’m not a literal monkey.</p></details></li></ul><ul id="23e30015-a4b3-805a-a4ad-d5e090b36ef6" class="toggle"><li><details open=""><summary>Follow Up Email 3</summary><p id="23e30015-a4b3-8091-9da5-c813934167de" class="">X, an interesting trend has emerged.</p><p id="23e30015-a4b3-80db-a846-db63d463d19d" class="">
+</p><p id="23e30015-a4b3-8032-9532-cf36ccd91ff2" class="">With competition popping out everywhere, businesses are forced to iterate and push updates and new apps faster, and better.</p><p id="23e30015-a4b3-80f7-999c-f44e55c26cdd" class="">
+</p><p id="23e30015-a4b3-8013-946f-fd4e01e06ee9" class="">Having spoken with people from (competitor names), cloud-based testing is now a need for Y to maintain their A-game.</p><p id="23e30015-a4b3-80cb-8503-e81426c3552b" class="">
+</p><p id="23e30015-a4b3-806f-bf7f-f55977b2c7f4" class="">How about a coffee chat on whether you need to jump on this T-train?</p></details></li></ul><ul id="23e30015-a4b3-8060-ba49-eff4c1163651" class="toggle"><li><details open=""><summary>Follow Up Email 4</summary><p id="23e30015-a4b3-8037-9a52-fad07bf25353" class="">Nothing?</p><p id="23e30015-a4b3-8005-a2aa-e1caea95679c" class="">
+</p><p id="23e30015-a4b3-8025-82cd-f038a71a242a" class="">Are you guys already sorted or am I lacking the touch of an artist?</p><p id="23e30015-a4b3-803f-9dd9-d572f019fa9c" class="">
+</p><p id="23e30015-a4b3-8099-bf39-c61ab00c99cf" class="">Anyhow, I&#x27;ve enjoyed researching X and the systems you have in place.</p><p id="23e30015-a4b3-80df-994a-f42c2ee9d807" class="">
+</p><p id="23e30015-a4b3-805b-9396-f7f64c10aff6" class="">Would love to have some feedback regarding my outreach.</p><p id="23e30015-a4b3-80fa-adcb-d41fb28caaa6" class="">
+</p><p id="23e30015-a4b3-8089-8143-c77937363d26" class="">Closing the loop,</p><p id="23e30015-a4b3-8084-a3f9-ff1765fa57a7" class="">Vedant</p></details></li></ul><hr id="23e30015-a4b3-80da-8e10-c4a961ce528e"/><h2 id="23e30015-a4b3-80f1-a149-f2f3ed865f4c" class="">LinkedIn Sales Cadence</h2><ul id="23e30015-a4b3-8080-9e01-eb2fae5b8eb8" class="toggle"><li><details open=""><summary>Primary Message</summary><p id="23e30015-a4b3-80bf-99e8-ff69964cdbd5" class="">Hey X,<br/></p><p id="23e30015-a4b3-804a-bfc6-f663a6d77254" class="">Been speaking with QA leaders from some of the top tech products around the globe, to understand current trends and practices.</p><p id="23e30015-a4b3-801d-84cd-d6312aea1567" class="">Open to chat regarding your testing processes and frameworks? Would love to exchange notes.</p><p id="23e30015-a4b3-8038-9789-d442fe79e11f" class="">
+</p></details></li></ul><ul id="23e30015-a4b3-8014-a214-cf04234528ea" class="toggle"><li><details open=""><summary>Follow Up Message 1</summary><p id="23e30015-a4b3-8049-85ba-c6bb7b47c58d" class="">X, do you have any recommendations for features that a cloud-based testing platform must have?</p><p id="23e30015-a4b3-8021-b2ad-ffa818253df4" class="">Something that has been bugging your team for quite some time?</p><p id="23e30015-a4b3-8015-97c1-f77661ae9ca9" class="">Looking to improve our product, hence any feedback is much appreciated.</p></details></li></ul><ul id="23e30015-a4b3-80a3-89ae-c5e60552256c" class="toggle"><li><details open=""><summary>Follow Up Message 2</summary><p id="23e30015-a4b3-80fc-a368-d825019f72a8" class="">My feed is filled with posts from folks in your company regarding recent product upgrades and new launches. Quite a buzz you guys have created.</p><p id="23e30015-a4b3-80e3-97a1-e0dfa7bf90fc" class="">Just out of curiosity, how did you guys reduce your testing time and maintained cross-browser compatibility?</p></details></li></ul><ul id="23e30015-a4b3-8019-aa02-d5a9ad866a54" class="toggle"><li><details open=""><summary>Follow Up Message 3</summary><p id="23e30015-a4b3-80e0-9b63-dcc43376d60b" class="">Engineering Managers from Amazon and Microsoft loved our testing solution. </p><p id="23e30015-a4b3-805c-98ff-fadfa24b38f3" class="">
+</p><p id="23e30015-a4b3-80f1-8e62-deb4b1a14613" class="">Improved testing time, faster bug identification, seamless integrations and parallel testing were some of the buzz words they mentioned while referring us.</p><p id="23e30015-a4b3-806d-aabc-d237307b1e16" class="">Was wondering if Y might be struggling with either of them? Or am I just disturbing you on a Monday morning?</p></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
